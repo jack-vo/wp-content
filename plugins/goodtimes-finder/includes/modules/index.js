@@ -1,3 +1,3 @@
-import HelloWorld from './HelloWorld/HelloWorld';
+import Finder from './Finder/Finder';
 
-export default [HelloWorld];
+export default [Finder];
