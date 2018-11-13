@@ -10,9 +10,9 @@ class Finder extends Component {
 
     render() {
         return (
-            <Fragment>
-                {this.props.content()}
-            </Fragment>
+            <div>
+                This is the Good Times Finder section
+            </div>
         );
     }
 }

@@ -14,3 +14,80 @@
 .jv-finder-categories {
     display: none;
 }
+
+.jv-finder-listItem {
+    display: flex;
+    padding: 10px;
+    list-style: none;
+    background: #fff;
+    border-left: 4px solid #02ab6b;
+    margin: 0 0 30px 0;
+}
+
+.jv-finder-listItem__imgWrapper {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    margin-right: 20px;
+}
+
+.jv-finder-listItem__img {
+    width: 120px;
+    max-width: 120px;
+}
+
+.jv-finder-listItem__title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.jv-finder-listItem__desc {
+    margin-bottom: 10px;
+}
+
+.jv-finder-listItem__startTime {
+    font-weight: bold;
+}
+
+.jv-finder-listItem__venue-name {
+    font-weight: bold;
+}
+
+.jv-finder-listItem__venue-address:before {
+    content: ' - ';
+}
+
+/* Eventful */
+.eventful-badge,
+.eventful-badge * {
+  margin: 0             !important;
+  padding: 0            !important;
+  border: 0             !important;
+  text-align: center    !important;
+  color: #CCC           !important;
+  font-family: Arial    !important;
+  text-decoration: none !important;
+}
+
+.eventful-large {
+  position: relative    !important;
+  width: 140px          !important;
+  font-size: 15px       !important;
+  line-height: 17px     !important;
+  font-weight: bold     !important;
+}
+
+.eventful-medium {
+  position: relative    !important;
+  width: 100px          !important;
+  font-size: 12px       !important;
+  line-height: 13px     !important;
+}                     
+                      
+.eventful-small {     
+  position: relative    !important;
+  width: 100px          !important;
+  font-size: 11px       !important;
+  line-height: 11px     !important;
+}
