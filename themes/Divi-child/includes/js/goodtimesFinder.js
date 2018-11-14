@@ -22,6 +22,7 @@
             .prop('disabled', !!disabled);
     };
     const $eventsResult = $('[data-component="events-result"]');
+    const $eventfulPromo = $('[data-component="eventful-promo"]');
     const renderEventsResult = function (data) {
         const events = (data.events && data.events.event) || [];
         const $list = $('<ul class="jv-finder-list"/>');
@@ -73,6 +74,8 @@
             .empty()
             .removeClass('loading')
             .append($list);
+
+        $eventfulPromo.removeClass('hidden');
     };
     let loading = false;
     const $form = $('[data-component="finder-form"]');
@@ -84,10 +87,10 @@
         const searchArgs = {
             app_key: 'wbBNBH5VMp6fH4G7',
             location: $form.find('[name="location"]').val(),
-            // category: getCategories($form.find('[data-component="categories"]')),
-            category: 'music',
+            category: getCategories($form.find('[data-component="categories"]')),
+            // category: 'music',
             within: $form.find('[name="within"]').val(),
-            sort_order: 'popularity',
+            sort_order: $form.find('[name="sort_order"]').val(),
             page_size: 20
         };
 
@@ -96,6 +99,8 @@
         $eventsResult
             .empty()
             .addClass('loading');
+
+        $eventfulPromo.addClass('hidden');
 
         EVDB.API.call('/events/search', searchArgs, function (data) {
             setAllInputsDisableState($form, false);

@@ -5,6 +5,15 @@ jQuery(function($) {
     $('[data-component="toggle-categories"]').click(function () {
         $(this)
             .toggleClass('active')
-            .next('[data-component="categories"]').toggle();
+            .next('[data-component="categories"]')
+            .toggleClass('hidden');
+    });
+
+    $('[data-component="toggle-advancedOptions"]').click(function () {
+        $(this)
+            .toggleClass('active')
+            .parent()
+            .next('[data-component="advancedOptions"]')
+            .toggleClass('hidden');
     });
 });

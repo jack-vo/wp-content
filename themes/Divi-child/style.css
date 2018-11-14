@@ -27,6 +27,11 @@
     -webkit-appearance: none;
 }
 
+.jv-finder-form input[type="text"]:focus,
+.jv-finder-form input[type="number"]:focus {
+    outline: 1px solid #2ea3f2;
+}
+
 .jv-finder-form input[type="text"] {
     width: 100%;
 }
@@ -35,12 +40,16 @@
     position: relative;
 }
 
+.jv-finder-form__mainQueryWrapper .et_pb_column:first-child {
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
 .jv-finder-form input[type="checkbox"] {
     margin-right: 10px;
 }
 
 .jv-finder-categories {
-    display: none;
     position: absolute;
     margin-top: 5px;
     left: 0;
@@ -54,15 +63,18 @@
 
 .jv-finder-form button.jv-finder-form__submit,
 .jv-finder-form button.jv-finder-form__toggleCategories {
+    margin-top: 22px;
+    margin-right: 6px;
     padding: .3em 2em .3em .7em;
     border: 2px solid transparent;
     background: rgba(0,0,0,.05);
     color: #666;
+    border-radius: 0;
 }
 
 .jv-finder-form button.jv-finder-form__toggleCategories.active,
 .jv-finder-form button.jv-finder-form__toggleCategories:hover,
-.jv-finder-form button.jv-finder-form__toggleCategories:active {
+.jv-finder-form button.jv-finder-form__toggleCategories:focus {
     color: #fff;
     background: #93b786;
 }
@@ -83,6 +95,8 @@ button.jv-finder-form__toggleCategories:after {
 .jv-finder-form button.jv-finder-form__submit {
     color: #fff;
     background: #2ea3f2;
+    margin-right: 0;
+    min-width: 160px;
 }
 
 .jv-finder-form button.jv-finder-form__submit:after {
@@ -143,6 +157,71 @@ button.jv-finder-form__toggleCategories:after {
     width: 14px;
 }
 
+@media (max-width: 479px) {
+    .jv-finder-form button.jv-finder-form__submit,
+    .jv-finder-form button.jv-finder-form__toggleCategories,
+    .jv-finder-categories {
+        width: 100%;
+    }
+}
+
+.jv-finder-toggleAdvancedOptionsWrapper {
+    padding: 20px 0;
+    clear: both;
+}
+
+.jv-finder-form button.jv-finder-toggleAdvancedOptions {
+    border: none;
+    font-size: 14px;
+    padding: 0;
+    color: #2ea3f2;
+}
+
+.jv-finder-form button.jv-finder-toggleAdvancedOptions:hover,
+.jv-finder-form button.jv-finder-toggleAdvancedOptions:focus {
+    padding: 0;
+    text-decoration: underline;
+    border: none;
+    background: none;
+}
+
+.jv-finder-form button.jv-finder-toggleAdvancedOptions:after {
+    content: none;
+}
+
+.jv-finder-advancedOptions {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.jv-finder-advancedOptions > div {
+    margin-right: 10px;
+}
+
+.jv-finder-advancedOptions label > span {
+    display: block;
+}
+
+.jv-finder-advancedOptions input[type="number"] {
+    width: 100px;
+}
+
+.jv-finder-advancedOptions select {
+    height: 50px;
+    width: 150px;
+    color: #666;
+    background: rgba(0,0,0,.05);
+    font-size: 1em;
+}
+
+.jv-finder-advancedOptions select:focus {
+    border-color: #2ea3f2;
+}
+
+/* Search result item*/
 .jv-finder-listItem {
     display: flex;
     padding: 10px;
@@ -187,6 +266,14 @@ button.jv-finder-form__toggleCategories:after {
 }
 
 /* Eventful */
+.jv-finder-eventful-promo {
+    text-align: center;
+}
+
+.eventful-badge {
+    display: inline-block;
+}
+
 .eventful-badge,
 .eventful-badge * {
   margin: 0             !important;

@@ -122,6 +122,16 @@ class GOFI_HelloWorld extends ET_Builder_Module {
           'name' => 'Other &amp; Miscellaneous'
         ]
     ];
+    private $finderSortOrder = [
+        [
+            'id'    => 'popularity',
+            'name'  => 'Popularity'
+        ],
+        [
+            'id'    => 'date',
+            'name'  => 'Date'
+        ]
+    ];
 
 	protected $module_credits = array(
 		'module_uri' => '',
@@ -158,6 +168,27 @@ class GOFI_HelloWorld extends ET_Builder_Module {
         return $result;
     }
 
+    private function getSortOrder() {
+        $result = '';
+        
+        $selectedSortOrder = isset($_GET['sort_order']) ? $_GET['sort_order'] : 'popularity';
+
+        foreach ($this->finderSortOrder as $order) {
+            $result .= '<option';
+
+            if ($selectedSortOrder === $order['id']) {
+                $result .= ' selected';
+            }
+
+            $result .= ' value="' . $order['id'] . '"';
+            $result .= '>';
+            $result .= $order['name'];
+            $result .= '</option>';
+        }
+
+        return $result;
+    }
+
     private function getValue($getKey, $defaultValue = '') {
         return isset($_GET[$getKey]) ? $_GET[$getKey] : $defaultValue;
     }
@@ -184,7 +215,7 @@ events like festival, concert…</p>
             <div class="et_pb_column et_pb_column_2_5 et_pb_column_2">
                 <button class="jv-finder-form__toggleCategories et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light"
                 data-icon="3" type="button" data-component="toggle-categories">Select categories</button>
-                <div class="jv-finder-categories" data-component="categories">
+                <div class="jv-finder-categories hidden" data-component="categories">
                     <ul>%2$s</ul>
                     <div class="jv-finder-categories__pointer"></div>
                 </div>
@@ -194,31 +225,44 @@ events like festival, concert…</p>
         </div>
     </div>
     
+
+    <div class="jv-finder-toggleAdvancedOptionsWrapper">
+        <button class="jv-finder-toggleAdvancedOptions et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light" data-icon="3"
+        data-component="toggle-advancedOptions">Advanced search options</button>
+    </div>
     
-    <div class="et_pb_section et_pb_section_0 et_section_regular">
+    <div class="jv-finder-advancedOptions hidden" data-component="advancedOptions">
         <div>
             <label>
                 <span>Within (miles)</span>
-                <input name="within" type="number" value="%3$s"/>
+                <input name="within" type="number" value="%3$s" min="1" max="5000"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                <span>Sort order</span>
+                <select name="sort_order">%4$s</select>
             </label>
         </div>
     </div>
 
     <input type="checkbox" checked="checked" name="get_request" style="display:none !important;"/>
-
+</form>
+<div class="jv-finder-events-result" data-component="events-result"></div>
+<div class="jv-finder-eventful-promo hidden" data-component="eventful-promo">
     <div class="eventful-badge eventful-small">
         <img src="http://api.eventful.com/images/powered/eventful_58x20.gif" alt="Local Events, Concerts, Tickets">
         <p><a href="http://eventful.com/">Events</a> by Eventful</p>
     </div>
-</form>
-<div class="jv-finder-events-result" data-component="events-result"></div>
+</div>
 </div>
 EOD;
         $content = sprintf(
             $content,
             $this->getValue('location', ''),
             $this->getCategories(),
-            $this->getValue('within', '20')
+            $this->getValue('within', '20'),
+            $this->getSortOrder()
         );
 
         return $content;
