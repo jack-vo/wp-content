@@ -10,16 +10,12 @@ class GOFI_HelloWorld extends ET_Builder_Module {
           'name' => 'Concerts &amp; Tour Dates'
         ],
         [
-          'id' => 'conference',
-          'name' => 'Conferences &amp; Tradeshows'
+            'id' => 'movies_film',
+            'name' => 'Film'
         ],
         [
-          'id' => 'comedy',
-          'name' => 'Comedy'
-        ],
-        [
-          'id' => 'learning_education',
-          'name' => 'Education'
+            'id' => 'food',
+            'name' => 'Food &amp; Wine'
         ],
         [
           'id' => 'family_fun_kids',
@@ -30,12 +26,24 @@ class GOFI_HelloWorld extends ET_Builder_Module {
           'name' => 'Festivals'
         ],
         [
-          'id' => 'movies_film',
-          'name' => 'Film'
+            'id' => 'holiday',
+            'name' => 'Holiday'
         ],
         [
-          'id' => 'food',
-          'name' => 'Food &amp; Wine'
+            'id' => 'books',
+            'name' => 'Literary &amp; Books'
+        ],
+        [
+            'id' => 'comedy',
+            'name' => 'Comedy'
+        ],
+        [
+            'id' => 'conference',
+            'name' => 'Conferences &amp; Tradeshows'
+        ],
+        [
+            'id' => 'learning_education',
+            'name' => 'Education'
         ],
         [
           'id' => 'fundraisers',
@@ -44,59 +52,51 @@ class GOFI_HelloWorld extends ET_Builder_Module {
         [
           'id' => 'art',
           'name' => 'Art Galleries &amp; Exhibits'
-        ],  
+        ],
         [
           'id' => 'support',
           'name' => 'Health &amp; Wellness'
-        ],  
-        [
-          'id' => 'holiday',
-          'name' => 'Holiday'
-        ],  
-        [
-          'id' => 'books',
-          'name' => 'Literary &amp; Books'
-        ],  
+        ],
         [
           'id' => 'attractions',
           'name' => 'Museums &amp; Attractions'
-        ],  
+        ],
         [
           'id' => 'community',
           'name' => 'Neighborhood'
-        ],  
+        ],
         [
           'id' => 'business',
           'name' => 'Business &amp; Networking'
-        ],  
+        ],
         [
           'id' => 'singles_social',
           'name' => 'Nightlife &amp; Singles'
-        ],  
+        ],
         [
           'id' => 'schools_alumni',
           'name' => 'University &amp; Alumni'
-        ],  
+        ],
         [
           'id' => 'clubs_associations',
           'name' => 'Organizations &amp; Meetups'
-        ],  
+        ],
         [
           'id' => 'outdoors_recreation',
           'name' => 'Outdoors &amp; Recreation'
-        ],  
+        ],
         [
           'id' => 'performing_arts',
           'name' => 'Performing Arts'
-        ],  
+        ],
         [
           'id' => 'animals',
           'name' => 'Pets'
-        ],  
+        ],
         [
           'id' => 'politics_activism',
           'name' => 'Politics &amp; Activism'
-        ], 
+        ],
         [
           'id' => 'sales',
           'name' => 'Sales &amp; Retail'
@@ -137,7 +137,7 @@ class GOFI_HelloWorld extends ET_Builder_Module {
 		return [
         ];
     }
-    
+
     private function getCategories() {
         $result = '';
         $selectedCategories = isset($_GET['categories']) ? $_GET['categories'] : [];
@@ -168,26 +168,43 @@ class GOFI_HelloWorld extends ET_Builder_Module {
 <h1>Your Good Times Finder!</h1>
 <p>Let’s start searching for the events around you simply by entering your area details and your interested type of
 events like festival, concert…</p>
-<form class="jv-finder-form" data-component="finder-form" method="get" action="/yourgoodtimes/good-times-finder/">
-    <div>
-        <label>
-            <span>Location</span>
-            <input name="location" type="text" maxlength="100" value="%1$s"/>
-            <span>Example: <code>Lodon, United Kingdom</code> or <code>Sydney, 2000, Australia</code></span>
-        </label>
+<form class="jv-finder-form" data-component="finder-form"
+      method="get" action="/yourgoodtimes/good-times-finder/">
+    <div class="jv-finder-form__mainQueryWrapper">
+        <div class="et_pb_section et_pb_section_0 et_section_regular">
+            <div class="et_pb_column et_pb_column_3_5 et_pb_column_1">
+                <label>
+                    <span>Location</span>
+                    <input class="jv-finder-form__mainQuery" name="location" type="text" maxlength="100" value="%1$s"/>
+                </label>
+                <div>
+                    <span>Example: <code>London, United Kingdom</code> or <code>Sydney, 2000, Australia</code></span>
+                </div>
+            </div>
+            <div class="et_pb_column et_pb_column_2_5 et_pb_column_2">
+                <button class="jv-finder-form__toggleCategories et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light"
+                data-icon="3" type="button" data-component="toggle-categories">Select categories</button>
+                <div class="jv-finder-categories" data-component="categories">
+                    <ul>%2$s</ul>
+                    <div class="jv-finder-categories__pointer"></div>
+                </div>
+                <button class="jv-finder-form__submit et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light"
+                data-icon="U" type="submit" title="Start searching">Search</button>
+            </div>
+        </div>
     </div>
-    <div>
-        <button type="button" data-component="toggle-categories">Select categories</button>
-        <ul class="jv-finder-categories" data-component="categories">%2$s</ul>
+    
+    
+    <div class="et_pb_section et_pb_section_0 et_section_regular">
+        <div>
+            <label>
+                <span>Within (miles)</span>
+                <input name="within" type="number" value="%3$s"/>
+            </label>
+        </div>
     </div>
-    <label>
-        <span>Within (miles)</span>
-        <input name="within" type="number" value="%3$s"/>
-    </label>
-    <input type="checkbox" checked="checked" name="get_request"/>
-    <div>
-        <button type="submit">Start searching</button>
-    </div>
+
+    <input type="checkbox" checked="checked" name="get_request" style="display:none !important;"/>
 
     <div class="eventful-badge eventful-small">
         <img src="http://api.eventful.com/images/powered/eventful_58x20.gif" alt="Local Events, Concerts, Tickets">

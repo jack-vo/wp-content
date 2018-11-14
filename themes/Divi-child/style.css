@@ -11,8 +11,136 @@
 
 /* =Theme customization starts here
 ------------------------------------------------------- */
+.jv-finder-form label {
+    display: block;
+    width: 100%;
+}
+
+.jv-finder-form input[type="text"],
+.jv-finder-form input[type="number"] {
+    padding: 16px;
+    border-width: 0;
+    border-radius: 0;
+    color: #666;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    -webkit-appearance: none;
+}
+
+.jv-finder-form input[type="text"] {
+    width: 100%;
+}
+
+.jv-finder-form__mainQueryWrapper {
+    position: relative;
+}
+
+.jv-finder-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 .jv-finder-categories {
     display: none;
+    position: absolute;
+    margin-top: 5px;
+    left: 0;
+    z-index: 100;
+    background: #f7f7f7;
+    padding: 15px 0 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 3px 11px rgba(0,0,0,.1);
+}
+
+.jv-finder-form button.jv-finder-form__submit,
+.jv-finder-form button.jv-finder-form__toggleCategories {
+    padding: .3em 2em .3em .7em;
+    border: 2px solid transparent;
+    background: rgba(0,0,0,.05);
+    color: #666;
+}
+
+.jv-finder-form button.jv-finder-form__toggleCategories.active,
+.jv-finder-form button.jv-finder-form__toggleCategories:hover,
+.jv-finder-form button.jv-finder-form__toggleCategories:active {
+    color: #fff;
+    background: #93b786;
+}
+
+.jv-finder-form button.jv-finder-form__toggleCategories.active:after {
+    transform: scaleY(-1) translate(0,-2px);
+}
+
+button.jv-finder-form__submit:after,
+button.jv-finder-form__toggleCategories:after {
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    opacity: 1;
+    margin-left: 0;
+}
+
+.jv-finder-form button.jv-finder-form__submit {
+    color: #fff;
+    background: #2ea3f2;
+}
+
+.jv-finder-form button.jv-finder-form__submit:after {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+.jv-finder-form button.jv-finder-form__submit:hover {
+    background: #2d74ba;
+}
+
+.jv-finder-categories ul {
+    margin: 0 5px 0 0;
+    padding: 0 20px 0 0;
+    height: 350px;
+    overflow: auto;
+}
+
+.jv-finder-categories li {
+    list-style: none;
+    margin-right: 0;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+.jv-finder-categories li:hover {
+    background: #dadada;
+    border-radius: 2px;
+}
+
+.jv-finder-categories li:last-child {
+    margin-bottom: 0;
+}
+
+.jv-finder-categories .jv-finder-categories__pointer {
+    background-color: #f7f7f7;
+    bottom: auto;
+    width: 25px;
+    height: 15px;
+    left: 50%;
+    top: 0;
+    margin-left: -13px;
+    position: absolute;
+}
+
+.jv-finder-categories__pointer:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    background-color: #f7f7f7;
+    border: 1px solid #d7d7d7;
+    bottom: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .03);
+    height: 14px;
+    left: 50%;
+    transform: translate(-8.5px, 8.5px) rotate(45deg);
+    width: 14px;
 }
 
 .jv-finder-listItem {
@@ -83,9 +211,9 @@
   width: 100px          !important;
   font-size: 12px       !important;
   line-height: 13px     !important;
-}                     
-                      
-.eventful-small {     
+}
+
+.eventful-small {
   position: relative    !important;
   width: 100px          !important;
   font-size: 11px       !important;

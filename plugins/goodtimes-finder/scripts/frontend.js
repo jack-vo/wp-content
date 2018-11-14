@@ -3,6 +3,8 @@
 jQuery(function($) {
     // Interaction
     $('[data-component="toggle-categories"]').click(function () {
-        $(this).next('[data-component="categories"]').toggle();
+        $(this)
+            .toggleClass('active')
+            .next('[data-component="categories"]').toggle();
     });
 });
