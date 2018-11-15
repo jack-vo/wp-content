@@ -239,6 +239,7 @@ button.jv-finder-form__toggleCategories:after {
 
 .invisible {
     opacity: 0;
+    visibility: hidden;
 }
 
 .jv-finder-advancedOptions > div {

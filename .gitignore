@@ -19,6 +19,9 @@ themes/*
 plugins/goodtimes-finder/node_modules
 plugins/goodtimes-finder/scripts/bundle.min.js
 plugins/goodtimes-finder/styles/bundle.min.css
+plugins/goodtimes-finder/scripts/*.min.js
+plugins/goodtimes-finder/scripts/*.min.css
+plugins/goodtimes-finder/styles/*.min.css
 plugins/goodtimes-finder/asset-manifest.json
 plugins/goodtimes-finder/*.map
 
