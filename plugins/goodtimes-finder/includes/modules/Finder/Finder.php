@@ -170,7 +170,7 @@ class GOFI_HelloWorld extends ET_Builder_Module {
 
     private function getSortOrder() {
         $result = '';
-        
+
         $selectedSortOrder = isset($_GET['sort_order']) ? $_GET['sort_order'] : 'popularity';
 
         foreach ($this->finderSortOrder as $order) {
@@ -196,17 +196,21 @@ class GOFI_HelloWorld extends ET_Builder_Module {
 	public function render( $attrs, $content = null, $render_slug ) {
 	    $content = <<<'EOD'
 <div class="jv-finder">
-<h1>Your Good Times Finder!</h1>
-<p>Let’s start searching for the events around you simply by entering your area details and your interested type of
-events like festival, concert…</p>
+
 <form class="jv-finder-form" data-component="finder-form"
       method="get" action="/yourgoodtimes/good-times-finder/">
+    <div class="jv-finder-header">
+        <div>
+            <h1>Your Good Times Finder!</h1>
+            <p>Let’s start searching for the events around you simply by entering your area details and your interested type of events like festival, concert…</p>
+        </div>
+    </div>
     <div class="jv-finder-form__mainQueryWrapper">
         <div class="et_pb_section et_pb_section_0 et_section_regular">
             <div class="et_pb_column et_pb_column_3_5 et_pb_column_1">
                 <label>
                     <span>Location</span>
-                    <input class="jv-finder-form__mainQuery" name="location" type="text" maxlength="100" value="%1$s"/>
+                    <input class="jv-finder-form__mainQuery" name="location" type="text" maxlength="150" value="%1$s" required/>
                 </label>
                 <div>
                     <span>Example: <code>London, United Kingdom</code> or <code>Sydney, 2000, Australia</code></span>
@@ -228,10 +232,10 @@ events like festival, concert…</p>
 
     <div class="jv-finder-toggleAdvancedOptionsWrapper">
         <button class="jv-finder-toggleAdvancedOptions et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_light" data-icon="3"
-        data-component="toggle-advancedOptions">Advanced search options</button>
+        data-component="toggle-advancedOptions" type="button">Advanced search options</button>
     </div>
     
-    <div class="jv-finder-advancedOptions hidden" data-component="advancedOptions">
+    <div class="jv-finder-advancedOptions invisible" data-component="advancedOptions">
         <div>
             <label>
                 <span>Within (miles)</span>

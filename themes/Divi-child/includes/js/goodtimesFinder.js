@@ -64,21 +64,35 @@
                                 .append($('<span class="jv-finder-listItem__venue-name"/>').html(event.venue_name))
                                 .append($('<span class="jv-finder-listItem__venue-address"/>').html(event.venue_address))
                         )
-                )
-                
+                );
 
             $list.append($item);
         });
 
         $eventsResult
             .empty()
-            .removeClass('loading')
-            .append($list);
+            .removeClass('loading');
+
+        if ($list.children().length) {
+            $eventsResult.append($list);
+        } else {
+            $eventsResult
+                .append('<div class="jv-finder-events-error">There is no event matching your search criteria...</div>');
+        }
 
         $eventfulPromo.removeClass('hidden');
     };
     let loading = false;
     const $form = $('[data-component="finder-form"]');
+    const $location = $form.find('[name="location"]');
+    const loaderTemplate = `
+        <div class="jv-finder-loader">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+            <div>Searching...</div>
+        </div>`;
     const loadEvents = function () {
         if (loading) {
             return;
@@ -86,7 +100,7 @@
 
         const searchArgs = {
             app_key: 'wbBNBH5VMp6fH4G7',
-            location: $form.find('[name="location"]').val(),
+            location: $location.val(),
             category: getCategories($form.find('[data-component="categories"]')),
             // category: 'music',
             within: $form.find('[name="within"]').val(),
@@ -98,6 +112,7 @@
 
         $eventsResult
             .empty()
+            .append(loaderTemplate)
             .addClass('loading');
 
         $eventfulPromo.addClass('hidden');
@@ -111,7 +126,12 @@
     // Process form
     $form.submit(function (event) {
         event.preventDefault();
-        loadEvents();
+
+        if ($location.val().trim().length) {
+            loadEvents();
+        } else {
+            alert('Please enter your location. For example: Sydney, Australia or London, United Kingdom...');
+        }
     });
 
     // Check if the GET variable is ready
