@@ -26,8 +26,8 @@
     const renderEventsResult = function (data) {
         const events = (data.events && data.events.event) || [];
         const $list = $('<ul class="jv-finder-list"/>');
-        const getStartTime = function (time) {
-            var date  = new Date(time);
+        const getStartTime = function (time = '') {
+            var date  = new Date(time.replace(/-/g, '/'));
 
             return date.toLocaleDateString("en-US", {
                 weekday: 'long',

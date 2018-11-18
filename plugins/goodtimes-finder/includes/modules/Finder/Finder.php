@@ -206,7 +206,7 @@ class GOFI_HelloWorld extends ET_Builder_Module {
         </div>
     </div>
     <div class="jv-finder-form__mainQueryWrapper">
-        <div class="et_pb_section et_pb_section_0 et_section_regular">
+        <div class="et_pb_section et_section_regular">
             <div class="et_pb_column et_pb_column_3_5 et_pb_column_1">
                 <label>
                     <span>Location</span>

@@ -37,7 +37,7 @@
     text-shadow: 0 0 .2em #000;
     color: #fff;
     font-size: 1em;
-    background-image: linear-gradient(180deg,rgba(99,99,99,.6) 0%,rgba(0,0,0,0) 100%),url(https://yourgoodtimes.com/wp-content/uploads/2018/11/joanna-kosinska-488795-unsplash.jpg)!important;
+    background-image: url(https://yourgoodtimes.com/wp-content/uploads/2018/11/joanna-kosinska-488795-unsplash.jpg)!important;
     background-position: center bottom;
     padding: 80px 20px 30px 20px;
     transition: height 1s ease-out;
@@ -271,6 +271,10 @@ button.jv-finder-form__toggleCategories:after {
 .jv-finder-events-result {
     min-height: 100px;
     margin-top: 40px;
+}
+
+ul.jv-finder-list {
+    margin-left: 0;
 }
 
 .jv-finder-listItem {
