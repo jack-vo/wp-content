@@ -1,0 +1,114 @@
+/* Main Account Dashboard */
+$border-color: #ddd;
+$my-account-nav-background-color: $primary-color;
+$my-account-main-background-color: #fff;
+
+.woocommerce {
+    .woocommerce-MyAccount-navigation {
+        ul {
+            list-style: none !important;
+            padding: 0;
+            margin: 0;
+
+
+            li {
+                > a {
+                    display: block;
+                    background: $my-account-nav-background-color;
+                    color: #fff;
+                    font-family: $primary-font-family;
+                    padding: 15px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                    transition: all .5s ease;
+                    text-decoration: none;
+
+                    &:before {
+                        font-family: $icon-font-family;
+                        font-weight: 400;
+                        margin-right: 10px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        background: $primary-color-focus;
+                    }
+                }
+
+                &:last-child {
+                    > a {
+                    }
+                }
+
+                &.is-active {
+                    > a {
+                        background: $my-account-main-background-color;
+                        box-shadow: 1px 0 0 $my-account-main-background-color;
+                        color: #666;
+                    }
+                }
+
+                &.woocommerce-MyAccount-navigation-link-- {
+                    &dashboard > a:before {
+                        content: '\e0ec';
+                    }
+
+                    &orders > a:before {
+                        content: '\e07c';
+                    }
+
+                    &edit-address > a:before {
+                        content: '\e081';
+                    }
+
+                    &edit-account > a:before {
+                        content: '\e087';
+                    }
+
+                    &customer-logout > a:before {
+                        content: '\e03b';
+                    }
+                }
+            }
+        }
+    }
+
+    .woocommerce-MyAccount-content {
+        padding: 20px;
+
+        .woocommerce-address-fields {
+            button.button {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+#cd-my-account-wrapper {
+    margin: 0;
+    padding: 0;
+    border: 1px solid $border-color;
+    background-image: linear-gradient(90deg,$my-account-nav-background-color 30%,#fff 30%);
+
+    .et_pb_text_inner {
+
+        > p {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: $screen-tablet) {
+    #cd-my-account-wrapper {
+        background-image: none;
+    }
+
+    .woocommerce-account {
+        .woocommerce-MyAccount-navigation {
+            ul {
+                li.is-active > a {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+a {
+    color: $primary-color;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+input.woocommerce-form__input-checkbox {
+    background: $primary-color;
+}
+
+input.woocommerce-form__input-checkbox:focus {
+    box-shadow: 0 0 3px $primary-color;
+}
+
+.mobile_menu_bar.mobile_menu_bar_toggle:before {
+    color: $primary-color;
+}
+
+.woocommerce,
+.woocommerce-page {
+    input.button:hover {
+        color: $primary-color;
+    }
+}
+

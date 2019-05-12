@@ -1,0 +1,42 @@
+/* Utils */
+.cd-position__relative {
+    position: relative;
+}
+
+.cd-text-align__center {
+    text-align: center;
+}
+
+.cd-icon {
+    position: relative;
+}
+
+.cd-icon:after {
+    top: 50%;
+    transform: translate(0, -50%);
+    position: absolute;
+    font-family: $icon-font-family;
+    font-weight: 400;
+}
+
+.icon_lock_alt:after {
+    content: '\e06c';
+}
+
+.icon_user:after {
+    content: '\e08a';
+}
+
+.cd-mobile__show {
+    display: none !important;
+}
+
+@media only screen and (max-width: $screen-tablet) {
+    .cd-mobile__show {
+        display: block !important;
+    }
+
+    .cd-mobile__hide {
+        display: none !important;
+    }
+}
