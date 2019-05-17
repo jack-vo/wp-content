@@ -1,0 +1,67 @@
+/*Wish List*/
+table.woosw-content-items {
+    background: #fff;
+    border: $decorator-border;
+    box-shadow: $decorator-box-shadow;
+
+    .woosw-content-item td {
+        .woosw-content-item--title a {
+            font-weight: normal;
+        }
+
+        .woocommerce-Price-amount {
+            color: $price-color;
+            font-weight: bold;
+        }
+
+        .woosw-content-item--add p > a {
+            text-align: center;
+            color: $primary-color;
+            padding: 5px;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
+
+
+#woosw_copy_url {
+    border: 1px solid $border-color;
+    padding: 5px;
+    color: #666;
+}
+
+
+/* Compare */
+#wooscp-table-close {
+    &:hover,
+    &:focus {
+        color: $primary-color;
+    }
+}
+
+#wooscp_table {
+    .woocommerce-Price-amount {
+        color: $price-color;
+        font-weight: bold;
+    }
+
+    .product.woocommerce.add_to_cart_inline {
+        visibility: collapse;
+
+        .add_to_cart_button {
+            color: $primary-color;
+            visibility: visible;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+
+            &:after {
+                font-size: 16px;
+                top: 8px;
+            }
+        }
+    }
+}

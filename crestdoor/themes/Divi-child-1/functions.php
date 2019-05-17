@@ -1,8 +1,24 @@
 <?php
 function my_theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style(
+        'parent-theme',
+        get_template_directory_uri() . '/style.css',
+        array(),
+        et_get_theme_version()
+    );
+
+    // Be careful, in the future if this stops working remove this line
+    wp_dequeue_style( 'divi-style' );
+
+    // Load child theme based on the modified time of the file
+    wp_enqueue_style(
+        'child-theme',
+        get_stylesheet_uri(),
+        array(),
+        filemtime( get_stylesheet_directory() . '/style.css' )
+    );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', 20 );
 
 // Custom JS - if required ======================
 //function add_bundle_script() {

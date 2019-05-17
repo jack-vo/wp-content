@@ -4,16 +4,16 @@
 #cd-reset-password,
 #cd-login-registration {
     max-width: 400px;
-    padding: 40px 40px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
     margin: 0 auto;
     transition: all 0.3s ease;
 
     form {
-        border: none;
+        border-radius: 8px;
         margin: 0;
-        padding: 0;
+        padding: 40px 40px;
+        border: none;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
         &.register {
             display: none;

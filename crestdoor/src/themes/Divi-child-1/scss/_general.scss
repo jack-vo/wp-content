@@ -1,10 +1,5 @@
 a {
     color: $primary-color;
-
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-    }
 }
 
 input.woocommerce-form__input-checkbox {

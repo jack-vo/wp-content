@@ -14,13 +14,15 @@ $my-account-main-background-color: #fff;
             li {
                 > a {
                     display: block;
-                    background: $my-account-nav-background-color;
-                    color: #fff;
+                    background: #fff;
+                    color: #333;
                     font-family: $primary-font-family;
                     padding: 15px;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
                     transition: all .5s ease;
                     text-decoration: none;
+                    border-radius: 4px;
+                    margin: 10px 0;
+                    border: 3px solid rgba(0, 0, 0, 0.05);
 
                     &:before {
                         font-family: $icon-font-family;
@@ -30,7 +32,13 @@ $my-account-main-background-color: #fff;
 
                     &:hover,
                     &:focus {
-                        background: $primary-color-focus;
+                        background: rgba(0, 0, 0, 0.05);
+                    }
+                }
+
+                &:first-child {
+                    > a {
+                        margin-top: 0;
                     }
                 }
 
@@ -41,9 +49,14 @@ $my-account-main-background-color: #fff;
 
                 &.is-active {
                     > a {
-                        background: $my-account-main-background-color;
-                        box-shadow: 1px 0 0 $my-account-main-background-color;
-                        color: #666;
+                        border-color: $primary-color;
+
+                        &:after {
+                            font-family: $icon-font-family;
+                            content: '\35';
+                            float: right;
+                            font-size: 16px;
+                        }
                     }
                 }
 
@@ -67,6 +80,10 @@ $my-account-main-background-color: #fff;
                     &customer-logout > a:before {
                         content: '\e03b';
                     }
+
+                    &payment-methods > a:before {
+                        content: '\e014';
+                    }
                 }
             }
         }
@@ -74,6 +91,9 @@ $my-account-main-background-color: #fff;
 
     .woocommerce-MyAccount-content {
         padding: 20px;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
 
         .woocommerce-address-fields {
             button.button {
@@ -86,8 +106,6 @@ $my-account-main-background-color: #fff;
 #cd-my-account-wrapper {
     margin: 0;
     padding: 0;
-    border: 1px solid $border-color;
-    background-image: linear-gradient(90deg,$my-account-nav-background-color 30%,#fff 30%);
 
     .et_pb_text_inner {
 
@@ -98,10 +116,6 @@ $my-account-main-background-color: #fff;
 }
 
 @media only screen and (max-width: $screen-tablet) {
-    #cd-my-account-wrapper {
-        background-image: none;
-    }
-
     .woocommerce-account {
         .woocommerce-MyAccount-navigation {
             ul {
@@ -109,6 +123,14 @@ $my-account-main-background-color: #fff;
                     box-shadow: none;
                 }
             }
+        }
+    }
+}
+
+body.woocommerce-payment-methods {
+    .woocommerce-MyAccount-content {
+        .woocommerce-Message.woocommerce-Message--info {
+            color: #333 !important;
         }
     }
 }

@@ -1,62 +1,94 @@
-.woocommerce {
-    .cd-notice {
-        background: #51b0da;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        position: relative;
-        padding: 15px 15px 15px 50px;
-        border-radius: 2px;
-        margin-bottom: 15px;
+%notice-shared {
+    background: #51b0da;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 15px 15px 15px 50px;
+    border-radius: 2px;
+    margin-bottom: 15px;
 
 
-        &:before {
-            content: '';
-            display: block;
-            font-family: $icon-font-family;
-            font-weight: 400;
-            font-size: 16px;
-            position: absolute;
-            top: 18px;
-            left: 15px;
-            color: #fff;
+    &:before {
+        content: '';
+        display: block;
+        font-family: $icon-font-family;
+        font-weight: 400;
+        font-size: 16px;
+        position: absolute;
+        top: 18px;
+        left: 15px;
+        color: #fff;
+    }
+
+    &.cd-notice__ {
+        &error {
+            background: #ee5266;
+
+            &:before {
+                content: '\e0f6';
+            }
         }
 
-        &.cd-notice__ {
-            &error {
-                background: #ee5266;
+        &info {
+            background: #f1b652;
 
-                &:before {
-                    content: '\e0f6';
-                }
+            &:before {
+                content: '\70';
             }
+        }
 
-            &info {
-                background: #f1b652;
-
-                &:before {
-                    content: '\70';
-                }
-            }
-
-            &message {
-                &:before {
-                    content: '\e065';
-                }
+        &message {
+            &:before {
+                content: '\e065';
             }
         }
     }
 
-    .woocommerce- {
-        &error,
-        &info,
-        &message {
-            background: none !important;
-            border-radius: 0 !important;
-            padding: 0 !important;
-            margin: 0;
-        }
+    > .button.woocommerce-Button {
+        position: relative;
 
-        &error > li {
-            list-style: circle inside !important;
+        &:after {
+            top: 0.2em;
+            right: 0;
         }
+    }
+}
+
+.cd-notice {
+    @extend %notice-shared;
+}
+
+.et_pb_module.et_pb_woopro_notices {
+    .cd-notice {
+        &.cd-notice__message {
+            > .woocommerce-message {
+                color: #fff !important;
+
+                a.button.wc-forward {
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+.woocommerce {
+    .woocommerce-MyAccount-content > .woocommerce-message,
+    .woocommerce-notices-wrapper .cd-notice {
+        @extend %notice-shared;
+    }
+}
+
+.woocommerce- {
+    &error,
+    &info,
+    &message {
+        background: none;
+        border-radius: 0;
+        padding: 0 !important;
+        margin: 0;
+    }
+
+    &error > li {
+        list-style: circle inside !important;
     }
 }
