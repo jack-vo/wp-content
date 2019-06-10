@@ -9,6 +9,7 @@
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
+    "prepend-file": "^1.3.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglify-js": "^3.5.11",
@@ -16,13 +17,17 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "symlink": "sudo ln -s ~/Desktop/workspace/wp-content/crestdoor/themes/Divi-child-1 ~/.bitnami/stackman/machines/xampp/volumes/root/htdocs/crestdoor/wp-content/themes/Divi-child-1",
-    "remove-symlink": "unlink ~/.bitnami/stackman/machines/xampp/volumes/root/htdocs/crestdoor/wp-content/themes/Divi-child-1",
-    "webpack-watch": "webpack --watch | yarn copy-watch",
+    "symlink": "sudo ln -s ~/Desktop/workspace/wp-content/crestdoor/themes/Divi-child-1 /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1",
+    "remove-symlink": "unlink /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1",
+    "webpack-watch": "webpack -d --watch",
+    "webpack-build": "webpack -p",
+    "scss-build": "node-sass src/themes/Divi-child-1/scss -o themes/Divi-child-1 --output-style compressed",
+    "postscss-build": "node ./config/sassBuild.js",
     "scss-watch": "node-sass --watch src/themes/Divi-child-1/scss -o themes/Divi-child-1",
-    "watch": "yarn scss-watch | yarn copy-watch",
-    "copy-build": "copy-and-watch themes/Divi-child-1/**/*.* ~/.bitnami/stackman/machines/xampp/volumes/root/htdocs/crestdoor/wp-content/themes/Divi-child-1/",
-    "copy-watch": "copy-and-watch --watch themes/Divi-child-1/**/*.* ~/.bitnami/stackman/machines/xampp/volumes/root/htdocs/crestdoor/wp-content/themes/Divi-child-1/"
+    "watch": "yarn scss-watch & yarn webpack-watch",
+    "build": "yarn scss-build & yarn webpack-build",
+    "copy-build": "copy-and-watch themes/Divi-child-1/**/*.* /Applications/MAMP/htdocs/htdocs/crestdoor/wp-content/themes/Divi-child-1/",
+    "copy-watch": "copy-and-watch --watch themes/Divi-child-1/**/*.* /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1/"
   },
   "dependencies": {
     "swiper": "^4.5.0"

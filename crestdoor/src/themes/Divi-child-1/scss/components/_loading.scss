@@ -1,0 +1,29 @@
+#cd-slider.loading .et_pb_column,
+.cd-loading {
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+
+    &:before {
+        background: rgba(0, 0, 0, .2);
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        z-index: 10;
+    }
+
+    &:after {
+        background: url(/wp-content/uploads/2019/05/loader.gif) center center no-repeat;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        top: 40px;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 11;
+        border-radius: 20px;
+    }
+}

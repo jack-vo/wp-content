@@ -15,8 +15,6 @@ module.exports = {
         ignored: ['node_modules'],
         poll: true
     },
-    mode: 'development',
-    devtool: 'inline-source-map',
     output: {
         path: distDir,
         filename: 'js/cd-bundle.js',

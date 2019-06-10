@@ -21,15 +21,16 @@ function my_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', 20 );
 
 // Custom JS - if required ======================
-//function add_bundle_script() {
-//    wp_enqueue_script(
-//        'custom-script',
-//        get_stylesheet_directory_uri() . '/js/cd-bundle.js',
-//        array( 'jquery' )
-//    );
-//}
-//
-//add_action( 'wp_enqueue_scripts', 'add_bundle_script' );
+function add_bundle_script() {
+    // Use is_front_page() to check home page
+    wp_enqueue_script(
+        'custom-script',
+        get_stylesheet_directory_uri() . '/js/cd-bundle.js',
+        array( 'jquery' ),
+        filemtime( get_stylesheet_directory() . '/js/cd-bundle.js' )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'add_bundle_script' );
 
 
 // Disable Image Zooom when Hovering - if required ======================

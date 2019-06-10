@@ -1,0 +1,46 @@
+nav.woocommerce-pagination > ul.page-numbers {
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    li {
+        &:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        > .current,
+        > a {
+            font-family: $primary-font-family;
+            font-weight: bold;
+            padding: 12px;
+            color: #9F9D9E;
+            min-width: 40px;
+
+            &:hover,
+            &:focus {
+                color: $primary-color;
+            }
+        }
+
+        > .prev,
+        > .next {
+            font-size: 0;
+        }
+
+        > .prev:before,
+        > .next:before {
+            content: '\44';
+            font-family: $icon-font-family;
+            font-size: 14px;
+        }
+
+        > .next:before {
+            content: '\45';
+        }
+    }
+}

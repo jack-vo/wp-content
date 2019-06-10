@@ -60,11 +60,28 @@
 .et_pb_module.et_pb_woopro_notices {
     .cd-notice {
         &.cd-notice__message {
+            padding-bottom: 60px;
+
             > .woocommerce-message {
                 color: #fff !important;
 
                 a.button.wc-forward {
+                    position: absolute;
+                    bottom: -42px;
+                    padding: 5px 10px;
+                    background: rgba(0, 0, 0, 0.3);
+                    color: #fff;
                     border: none;
+                    float: none;
+                    display: block;
+                    font-size: .8em;
+                    text-align: center;
+                    vertical-align: middle;
+                    font-weight: normal;
+
+                    &:after {
+                        content: none;
+                    }
                 }
             }
         }
