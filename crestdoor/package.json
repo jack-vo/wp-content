@@ -17,7 +17,7 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "symlink": "sudo ln -s ~/Desktop/workspace/wp-content/crestdoor/themes/Divi-child-1 /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1",
+    "symlink": "ln -s ~/Desktop/workspace/wp-content/crestdoor/themes/Divi-child-1 /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1",
     "remove-symlink": "unlink /Applications/MAMP/htdocs/crestdoor/wp-content/themes/Divi-child-1",
     "webpack-watch": "webpack -d --watch",
     "webpack-build": "webpack -p",

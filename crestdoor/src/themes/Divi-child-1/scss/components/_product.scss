@@ -1,34 +1,35 @@
 /* Product List */
+.woocommerce-result-count {
+    font-family: $primary-font-family;
+    padding-left: 18px;
+    line-height: 35px;
+
+    &:before {
+        position: absolute;
+        content: '\e08c';
+        font-family: $icon-font-family;
+        left: 0;
+    }
+}
 .woocommerce ul.products li.product {
-    background: #f7f7f7;
-    border: $decorator-border;
-    box-shadow: $decorator-box-shadow;
     transition: all .3s ease-in;
-    text-align: center;
 
     .woocommerce-loop-product__title {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-    }
-
-    &:hover,
-    &:focus {
-        border-color: $primary-color;
-        box-shadow: $decorator-box-shadow-hover;
+        padding-bottom: .1em;
     }
 
     a.woocommerce-loop-product__link {
         .woocommerce-loop-product__title {
-            padding-left: 20px;
-            padding-right: 20px;
             color: #333;
             line-height: 22px;
         }
     }
 
     .price {
-        padding: 0 5px 10px 5px;
+        padding: 0 0 10px 0;
         font-size: 1.2em;
         font-family: $primary-font-family;
         color: #000;
@@ -44,31 +45,57 @@
 
     .et_shop_image {
         background: #fff;
+
+        .et_overlay {
+            border: none;
+        }
     }
 
     .et_overlay {
         border-radius: 0;
-        background: rgba(0, 0, 0, .5);
+        background: $hover-background;
 
         &:before {
-            color: $primary-color;
+            color: #fff;
+            content: '\e03e';
         }
     }
 
     .onsale {
-        font-size: 12px;
-        width: $sale-badge-size;
-        height: $sale-badge-size;
+        font-size: 10px;
         margin: 0 !important;
-        border-radius: ($sale-badge-size * 2) !important;
-        padding: 0 !important;
-        line-height: ($sale-badge-size - 2px) !important;
+        border-radius: 0 !important;
+        padding: 2px 5px 0 5px !important;
         text-align: center;
-        background: $primary-color !important;
+        background: linear-gradient(0deg, transparent 30%, $sale-badge-color 30%) !important;
         z-index: 1000;
-        top: -($sale-badge-size/2) !important;
-        left: -($sale-badge-size/2) !important;
-        box-shadow: 0 0 0 2px rgba(0,0,0,.1) !important;
+        top: -3px !important;
+        left: 3px !important;
+        overflow: hidden;
+        height: 40px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: -1;
+            bottom: -7px;
+            border: 20px solid transparent;
+        }
+
+        &:before {
+            left: 0;
+            border-left-color: $sale-badge-color;
+            transform: rotate(20deg);
+        }
+
+        &:after {
+            right: 0;
+            border-right-color: $sale-badge-color;
+            transform: rotate(-20deg);
+        }
     }
 
     .woosw-btn {
@@ -100,7 +127,7 @@
         cursor: pointer;
         padding: 0;
         z-index: 100;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
         &:hover,
         &:focus {

@@ -16,14 +16,35 @@
     }
 
     &:after {
-        background: url(/wp-content/uploads/2019/05/loader.gif) center center no-repeat;
-        background-size: cover;
-        width: 40px;
-        height: 40px;
+        content: '\e0e1';
+        font-size: 22px;
         top: 40px;
         left: 50%;
         transform: translate(-50%,0);
-        z-index: 11;
-        border-radius: 20px;
+        color: $primary-color;
+        font-family: $icon-font-family;
+        z-index: 1001;
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background: #000;
+        border: 3px solid #f8f8f8;
+        animation: rotation 2s infinite linear;
+        transform-origin: center center;
+    }
+}
+
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%,0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%,0) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%,0) rotate(360deg);
     }
 }

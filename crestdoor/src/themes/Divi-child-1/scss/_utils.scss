@@ -1,22 +1,35 @@
 /* Utils */
 .cd-section-title {
     position: relative;
-    font-family: $primary-font-family;
-    margin-bottom: 20px;
+    font-family: $header-font-family;
 
     .et_pb_text_inner {
-        text-align: center;
+        margin-bottom: 40px;
     }
 
     &:after {
         content: '';
         position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translate(-50%, 0);
+        bottom: -10px;
+        left: 0;
         height: 3px;
-        width: 40px;
-        background: #9d4d4a;
+        width: 80px;
+        background: $sub-color;
+    }
+
+    &.center {
+        .et_pb_text_inner {
+            text-align: center;
+
+            h1, h2, h3, h4, h5, h6 {
+                text-align: inherit;
+            }
+        }
+
+        &:after {
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
     }
 }
 

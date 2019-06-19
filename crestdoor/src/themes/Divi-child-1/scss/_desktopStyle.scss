@@ -1,0 +1,28 @@
+body:not(.et_mobile_device) {
+    #cd-slider {
+        .et_pb_module {
+            padding: 10px;
+        }
+
+        .et_pb_image_wrap {
+            &:hover {
+                outline-color: $sub-color;
+
+                &:before {
+                    opacity: 1;
+                }
+
+                &:after {
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
+        }
+
+        .slick-arrow {
+            &:hover {
+                background: rgba(147, 183, 134, 0.8);
+            }
+        }
+    }
+}

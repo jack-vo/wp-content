@@ -1,0 +1,9 @@
+.search {
+    &.search-no-results {
+        #main-content {
+            .woocommerce-info {
+                padding: 15px !important;
+            }
+        }
+    }
+}
