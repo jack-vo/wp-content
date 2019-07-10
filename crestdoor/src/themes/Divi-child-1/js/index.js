@@ -1,4 +1,5 @@
-import './vendor/slick';
+import '../scss/style.scss';
+import './../../../vendor/slick';
 
 jQuery(() => {
     const $ = jQuery;

@@ -1,0 +1,27 @@
+ul.products li.product {
+    .price .cart_price {
+        ins {
+            margin-left: 0;
+        }
+    }
+}
+
+input.qty {
+    background: #fff;
+}
+
+.cart_price {
+    del {
+        display: block;
+
+        > ins {
+            color: #695736;
+            font-size: 1em;
+        }
+    }
+
+    ins {
+        color: $price-color;
+        font-size: 1.2em;
+    }
+}

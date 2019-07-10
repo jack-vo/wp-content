@@ -33,6 +33,11 @@ function add_bundle_script() {
 add_action( 'wp_enqueue_scripts', 'add_bundle_script' );
 
 
+// Enable REST API caching for WP-Rocket
+// https://trello.com/c/Pad52YOp/113-caching-the-rest-api
+add_filter( 'rocket_cache_reject_wp_rest_api', '__return_false' );
+
+
 // Disable Image Zooom when Hovering - if required ======================
 //function remove_image_zoom_support() {
 //    remove_theme_support( 'wc-product-gallery-zoom' );

@@ -1,26 +1,26 @@
+const path = require('path');
+const fs = require('fs');
 const prependFile = require('prepend-file');
-const content = `
-/*
- Theme Name:     Divi Child - 1
- Theme URI:      https://www.elegantthemes.com/gallery/divi/
- Description:    Divi Child Theme
- Author:         Elegant Themes
- Author URI:     https://www.elegantthemes.com
- Template:       Divi
- Version:        1.0.0
-*/
+const theme = (() => {
+    const args = process.argv;
 
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
 
-/* =Theme customization starts here
-------------------------------------------------------- */
-`;
+        if (arg.indexOf('--theme=') === 0) {
+            return arg.split('=')[1];
+        }
+    }
+})();
+const themeCommentFilePath = path.resolve(__dirname, `../src/themes/${theme}-child-1/scss/_themeComment.scss`);
+const content = fs.readFileSync(themeCommentFilePath, 'utf8');
 
-prependFile('./themes/Divi-child-1/style.css', content, function (err) {
+prependFile(`./themes/${theme}-child-1/style.css`, content, function (err) {
     if (err) {
         console.log('error');
         return;
     }
 
     // Success
-    console.log('Divi-child 1 style.css has been built!');
+    console.log(`${theme}-child 1 style.css has been built!`);
 });
