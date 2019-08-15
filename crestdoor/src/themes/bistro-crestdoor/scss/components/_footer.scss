@@ -1,0 +1,119 @@
+#page .sfb-footer-bar {
+    padding-top: 4em;
+
+    .widget_product_search {
+        border-top: 1px dashed;
+        padding-top: 30px;
+        margin-bottom: 15px;
+
+        .woocommerce-product-search {
+            max-width: 500px;
+            margin: 0 auto;
+
+            .search-field {
+                background: #f6f6f6;
+            }
+        }
+    }
+
+    #menu-main-footer {
+        margin-top: 0;
+        padding-top: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+
+            &:before {
+                content: none;
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            a {
+                color: $primary-color-2;
+                font-weight: bold;
+
+                &:hover {
+                    border-bottom: 3px solid $interactive-color;
+                }
+            }
+
+            &.current-menu-item a {
+                border-bottom: 3px solid $interactive-color;
+            }
+        }
+    }
+
+    .jetpack_widget_social_icons {
+        margin-bottom: 0;
+    }
+
+    .jetpack-social-widget-list {
+        text-align: center;
+
+        .jetpack-social-widget-item a {
+            color: #333;
+
+            &:hover {
+                color: $interactive-color;
+            }
+        }
+    }
+}
+
+.cd-payment-types {
+    text-align: center;
+
+    > div {
+        display: inline-block;
+        width: 40px;
+        height: 25px;
+        margin-right: 15px;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.mastercard {
+            background-image: url(//cdn.teesity.com/wp-content/uploads/svg/mastercard.svg);
+        }
+
+        &.visa {
+            background-image: url(//cdn.teesity.com/wp-content/uploads/svg/visa.svg);
+        }
+
+        &.paypal {
+            width: 95px;
+            background-image: url(//cdn.teesity.com/wp-content/uploads/svg/paypal.svg);
+        }
+
+        &.apple-pay {
+            background-image: url(//cdn.teesity.com/wp-content/uploads/svg/apple-pay-payment.svg);
+        }
+
+        &.google-pay {
+            width: 64px;
+            background-image: url(//cdn.teesity.com/wp-content/uploads/svg/google-pay.svg);
+        }
+    }
+}
+
+.product {
+    .cd-payment-types {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+}
+
+.site-footer {
+    .site-info {
+        padding: 0;
+        text-align: center;
+    }
+}

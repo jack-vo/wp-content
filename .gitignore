@@ -42,3 +42,10 @@ yourgoodtimes/plugins/goodtimes-finder/*.map
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+extra/node_modules
+extra/config/prod.json
+extra/data/local
+extra/data/local/*
+extra/data/prod
+extra/data/prod/*

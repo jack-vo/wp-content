@@ -1,0 +1,17 @@
+.cd-icon {
+    &:before {
+        @include icon;
+    }
+}
+
+.icon-gift:before {
+    content: '\f06b';
+}
+
+.icon-global:before {
+    content: '\f57d';
+}
+
+.icon-lock:before {
+    content: '\f023';
+}

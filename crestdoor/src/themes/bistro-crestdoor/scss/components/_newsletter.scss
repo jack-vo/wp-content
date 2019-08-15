@@ -1,0 +1,93 @@
+.cd-newsletter {
+    position: relative;
+    padding: 150px 0;
+
+    &:before {
+        background: url(https://cdn.teesity.com/wp-content/uploads/2019/07/nice_couple.jpg) center center no-repeat;
+        background-size: cover;
+        z-index: -2;
+    }
+
+    &:after {
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .cd-section-header {
+        margin-bottom: 30px;
+
+        &:after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 150px;
+            background: #fff;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: Roboto, Helvetica;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .cd-newsletter-description {
+        color: #fff;
+
+        h2 {
+            font-size: 60px;
+            color: inherit;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+    }
+}
+
+#mc_embed_signup form {
+    label {
+        display: none;
+    }
+
+    #mce-success-response,
+    div.mce_inline_error {
+        margin-bottom: 10px;
+        border-radius: 2px;
+        border-left: 8px solid rgba(255, 255, 255, 0.2);
+        background: #e2401c;
+        color: #fff;
+        font-weight: normal;
+    }
+
+    #mce-success-response {
+        background: $primary-color;
+        padding: 5px 10px;
+    }
+}
+
+#mce-EMAIL {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#mc-embedded-subscribe {
+    width: 100%;
+}

@@ -2,7 +2,10 @@ $screen-tablet: 768px;
 $text-color: #333;
 $theme-color: #eaC355;
 $primary-color: #0f834d;
+$primary-color-2: #4B3918;
 $primary-color-focus: darken($primary-color, 30%);
+$interactive-color: #EE6948;
+$header-bottom-color: #ed4441;
 $sub-color: #f7d584;
 $text-input-color: #7c7c7c;
 $hover-background: rgba(255,86,117,0.73);
@@ -10,6 +13,7 @@ $primary-font-family: 'Oswald',Helvetica,Arial,Lucida,sans-serif;
 $header-font-family: 'Playfair Display',Georgia,'Times New Roman',serif;
 $icon-font-family: ETmodules!important;
 
+$price-before-color: #695736;
 $price-color: #9d4d4a;
 $product-list-button-border-color: rgba(0, 0, 0, 0.06);
 $product-list-button-bg-color: rgba(0, 0, 0, 0.03);
@@ -17,3 +21,5 @@ $decorator-border: 1px solid #e6e6e6;
 $decorator-box-shadow: 0 0 0 2px rgba(0, 0, 0, .05);
 $decorator-box-shadow-hover: 0 0 0 2px rgba(147, 183, 134, 0.8);
 $sale-badge-color: $price-color;
+
+$bg-color: #f4f4f4;

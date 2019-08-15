@@ -1,0 +1,10 @@
+{
+  "db": {
+    "database": "crestdoor",
+    "table_prefix": "wp",
+    "user": "root",
+    "password": "root",
+    "host": "localhost",
+    "port": "8889"
+  }
+}

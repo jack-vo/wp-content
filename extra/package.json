@@ -1,0 +1,16 @@
+{
+  "name": "extra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "local": "node ./index.js env=local",
+    "prod": "node ./index.js env=prod"
+  },
+  "devDependencies": {
+    "csvtojson": "^2.0.10",
+    "fakerator": "^0.3.0",
+    "lodash": "^4.17.15",
+    "mysql": "^2.17.1"
+  }
+}

@@ -1,0 +1,47 @@
+.cd-site-features {
+    margin-top: -10%;
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    border-top: 10px solid $primary-color;
+    border-radius: 4px;
+    padding-top: 40px;
+    box-shadow: 0 40px 80px -6px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.cd-blurb {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 10px 30px 20px 30px;
+    text-align: center;
+
+    .cd-blurb-header {
+        margin-bottom: 10px;
+
+        .cd-icon {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            font-size: 40px;
+            background: #bdc1c9;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+
+            &:before {
+                @include center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $screen-tablet) {
+    .cd-site-features {
+        margin-top: auto;
+        padding-top: 0;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+}
